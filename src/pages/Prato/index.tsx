@@ -3,7 +3,6 @@ import styles from './Prato.module.scss';
 import cardapio from 'data/cardapio.json';
 import { Tags } from 'components/Tags';
 import { NotFound } from 'pages/NotFound';
-import { Header } from 'components/Header';
 
 export const Prato = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ export const Prato = () => {
   if (!prato) return <NotFound />;
 
   return (
-    <Header>
+    <>
       <button className={styles.voltar} onClick={() => navigate(-1)}>
         {'< Voltar'}
       </button>
@@ -26,6 +25,6 @@ export const Prato = () => {
           <Tags {...prato} />
         </div>
       </section>
-    </Header>
+    </>
   );
 };
